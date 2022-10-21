@@ -24,6 +24,7 @@ public class Program2 {
 		for (Department obj : list) {
 			System.out.println(obj);	
 		}
+		
 		/*
 		System.out.println("=== TEST 3: Department Insert ===");
 		Department dep = new Department(null, "Music");
@@ -31,6 +32,18 @@ public class Program2 {
 		System.out.println("Inserted! New id = " + dep.getId());
 		*/
 		
+		System.out.println("\n=== TEST 4: Department Update ===");
+		department = departmentDao.findById(1);
+		department.setName("Food");
+		departmentDao.update(department);
+		System.out.println("Update completed!");
+		
+		
+		System.out.println("\n=== TEST 5: Department Delete ===");
+		System.out.print("Enter id for delete test: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete Complete!");
 		sc.close();
 		
 	}
